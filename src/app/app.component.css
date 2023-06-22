@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color: #706c6c;
+	--color2:#4d4646;
+	--color3:#390856;	
+	--colorform: #ECD9F7; 
+	--colorfondo: radial-gradient(#0d2c7b 0.55px, transparent 0.55px), radial-gradient(#0d2c7b 0.55px, #0e0933 0.55px);;
+	
+  }
+body{
+	width: 100%;
+	height: 100vh;	
+	display: flex;
+	justify-content: center; 
+	align-items:center;
+	font-family: 'Roboto', sans-serif;	
+	background-image:radial-gradient(#0d2c7b 0.55px, transparent 0.55px), radial-gradient(#0d2c7b 0.55px, #0e0933 0.55px);;
+	background-size: 20px 20px;
+	background-position: 0 0,10px 10px;
+}
+.conteiner {
+	width: 500px;
+	height: 500px;	
+	display: flex;
+	flex-wrap: wrap;
+	align-content:start;
+	position: relative;
+	overflow: hidden;/*todo lo que sobrepasa la caja que no se vea*/
+	border-radius: 10px;	
+	box-shadow: 0px 10px 10px black;	
+}
+
+.card{
+    
+    padding-top: 20px;
+    padding-right: 3px;
+	padding-left: 3px;
+	width: 300px;
+	height: 200px;	
+	gap: 10 px;
+	margin-left: 50px;
+    padding-right: 50px;	
+	border-radius: 10px;	
+	box-shadow: 0px 10px 10px black;
+    background: #ECD9F7;
+  
+    
+}
+
+/*CODIGO PARA DAR ESTILOS ANIMADOS A LOS FORMULARIOS*/
+
+form {
+	width: 100%;
+	height: 100%;
+	/*height:calc(100% - 40px);*/
+	/*visibility: hidden;	
+	/*transform: translate(300px);
+	transition: 1s;	*/
+	position: absolute;
+	/*top: 40px;*/
+	/*opacity: 0; /* para que la transición se de de apoco, mi opacity sea 0 por defecto y cuando este chequeado sea 1*/
+	text-align: center;
+}
+/*Contenedor del from*/
+.form_conteiner{
+	margin-top: 3em;
+	display: grid;
+	gap: 2.5em;
+}
+/*Contenedor de inputs y label en from*/
+.form_group{
+	position:relative;
+	color: #5757577e;
+}
+/*estilos para los inputs de los from*/
+.form_input {
+	width: 90%;
+	background: none;
+	color:#706c6c;
+	font-size: 1.6rem;
+	padding: .5em .2em;
+	border:none;
+	outline: none;
+	border-bottom: 1px solid #706c6c;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* cuando el form este activo, se hace focus y cuando no se muestre el placeholder cambia estilo de label*/
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label{
+	transform: translateY(-12px) scale(.7); /* se traslada hacia arriba*/
+	transform-origin: left top;
+	color:#390856;	;
+
+}
+/* cuando el form este activo  y cuando no se muestre el placeholder tenga un color mas oscuro*/
+.form_input:not(:placeholder-shown){
+	color:#4d4646;
+
+}
+/*estilos para los label de los from*/
+.form_label{
+	color:#706c6c;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	left:30px;
+	transform: translateY(10px);
+	transition: transform .5s, color .3s;
+}
+/*estilos para el boton submit de from*/
+.form_submit {
+	background:radial-gradient(#0d2c7b 0.55px, transparent 0.55px), radial-gradient(#0d2c7b 0.55px, #0e0933 0.55px);;;
+	color:#fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100px;
+	font-size: 1rem;
+	padding: .4em 0;
+	border:none;
+	border-radius: .5em;
+	width: 50%;
+}
+/*estilos para las lineas de los inputs */
+.form_line{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 90%;
+	height: 1px;	
+	transform: scale(0); /*oculto la linea*/
+	transform: left bottom; /* el origen de la tranformacion empiece hacia la izq y hacia abajo*/
+	transition: transform .4s;
+}
+
+/* cuando estemos activos en un formulario, en un input o cuando el placeholder no se muestre
+/* quiero que su hermano form_line se vea afectado*/
+.form_input:focus ~ .form_label,
+.form_input:not(:placeholder-shown) + .form_line{
+	transform: scale(1);	
+}
+#formulario1{
+	background:  #ECD9F7;
+}
+.img{
+
+    width: 100px;
+    height: 100px;
+    padding: .3em .2em;
+
+}
+h4{
+    font-size: medium;
+    padding: .3em .2em;
+    margin-top: 20px;
+}
+
+
